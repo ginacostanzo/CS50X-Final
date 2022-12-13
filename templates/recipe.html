@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ drink }} Recipe
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                {{ drink }}
+            </h1>
+            <h4>
+                <form method="post" action="/favorites">
+                    <input type="hidden" name="drink" value="{{ drink }}">
+                    <button class="button" type="submit">{{ message }}</button>
+                </form>
+            </h4>
+        </div>
+    </header>
+
+    <body>
+        <p></p>
+
+        <div class="body">
+            <div class="header">Ingredients:</div>
+            {% for recipe in recipes %}
+            <p>
+                {{ recipe["quantity"] }} {{ recipe["ingredient"] }}
+            </p>
+            {% endfor %}
+            <p>
+                <h5>You are missing:</h5>
+                {% for missing_ing in missing_ings %}
+                <p>{{ missing_ing }}</p>
+                {% endfor %}
+                </p>
+            <div class="header">Instructions:</div>
+            <p>
+                {{ instruction }}
+            </p>
+
+        </div>
+        <p>
+            <button class="button" type="button"><a href="/drinks" class="btn_link">Go back to recipes.</a></button>
+        </p>
+
+
+        </body>
+    <p></p>
+    <p></p>
+
+
+
+{% endblock %}

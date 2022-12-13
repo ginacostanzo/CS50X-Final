@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Bar
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                All Ingredients
+            </h1>
+        </div>
+    </header>
+    <body>
+        <form action="/ingredients" method="post">
+            <p><h2>
+                <button class="button"><a class="btn_link" href="/add2">Add a new ingredient</a>
+                </h2></p>
+            <p><h4>Select an ingredient to see what recipes include it.</h4></p>
+
+            <button type="button" class="collapsible">Search Ingredients</button>
+            <div class="content">
+            <p>
+            <p>If an ingredient does not come up, it is not yet in the system! Please add it by clicking "Add a new ingredient" above.</p>
+            <input list="ingredient1" name="ingredient1" class="bar_name">
+                <datalist id="ingredient1">
+                    {% for ingredient in ingredients %}
+                <option name="ingredient1" value="{{ ingredient }}">
+                    {% endfor %}
+                </datalist>
+            <button type="submit" class="search_btn">View Recipes</button>
+            </p>
+            </div>
+            <button type="button" class="collapsible">Browse Ingredients</button>
+            <div class="content">
+                {% for ingredient in ingredients %}
+            <p>
+                <button class="link" type="submit" name="ingredient2" value="{{ ingredient }}">{{ ingredient }}</button>
+            </p>
+            {% endfor %}
+            </div>
+            </form>
+        <p></p>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+        </script>
+        </body> <p>
+
+    </p>
+    <p>
+
+
+
+{% endblock %}

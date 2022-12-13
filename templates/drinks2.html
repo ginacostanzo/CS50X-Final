@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Drink Recipes
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                Recipes With {{ ingredient }}
+            </h1>
+        </div>
+    </header>
+
+    <body>
+        <form action="/recipe" method="post">
+        <h2><button class="button"><a href="/add1" class="btn_link">ADD A RECIPE</a></button></h2>
+        <p></p>
+        <div class="body">
+        <div class="header">Search Recipes</div>
+        <p><p></p>
+        <input list="drink" name="drink1" class="bar_name">
+            <datalist id="drink">
+                {% for drink in drinks %}
+            <option name="drink1" value="{{ drink["drink"] }}">
+                {% endfor %}
+            </datalist>
+            <button type="submit" class="search_btn">View Recipe</button>
+        </p>
+        <div class="header">All Recipes With {{ ingredient }}</div>
+
+            {% for drink in drinks %}
+            <p>
+                <button class="link" type="submit" name="drink2" value="{{ drink["drink"] }}">{{ drink["drink"] }}</button>
+            </p>
+            {% endfor %}
+            </div>
+        </form>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+        </script>
+
+        </body>
+    <p></p>
+    <p></p>
+
+
+
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Update Bar
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+            {{ bar_name }}
+            </h1>
+            <h4>
+                Select an option to update your bar. Make sure to save your changes.
+            </h4>
+        </div>
+    </header>
+
+    <body>
+        <form action="/update" method="post">
+            <button type="button" class="collapsible">Rename Bar</button>
+                <div class="content">
+                    <p>Current Name: {{ bar_name }}</p>
+                    <p>
+                    <h4><input type="text" name="bar_name" class="bar_name" placeholder="New Bar Name", autofocus, autocomplete="off"></h4>
+                    </p>
+                </div>
+                <p></p>
+            <button type="button" class="collapsible">Remove Ingredients</button>
+                <div class="content">
+                    <p>Check the boxes of the ingredients you want to remove.
+                        {% for bar in bars %}
+                        <h4><input type="checkbox" name ="id" value="{{ bar["id"] }}" class="checkbox"> {{ bar["ingredients"] }}</h4>
+                        {% endfor %}</p>
+                </div>
+                <p></p>
+                <button type="button" class="collapsible">Add Ingredients</button>
+                <div class="content">
+                    <button type="button" class="collapsible">Spirits</button>
+                <div class="content">
+                <p>
+                    {% for spirit in spirits %}
+                    <h4><input type="checkbox" name ="ingredient" value="{{ spirit }}" class="checkbox"> {{ spirit }}</h4>
+                    {% endfor %}</p>
+                </div>
+            <button type="button" class="collapsible">Syrups</button>
+                    <div class="content">
+                    <p>{% for syrup in syrups %}
+                    <h4><input type="checkbox" name ="ingredient" value="{{ syrup }}" class="checkbox"> {{ syrup }}</h4>
+                    {% endfor %}</p>
+                </div>
+                    <button type="button" class="collapsible">Juices</button>
+                <div class="content">
+                    <p>{% for juice in juices %}
+                        <h4><input type="checkbox" name ="ingredient" value="{{ juice }}" class="checkbox"> {{ juice }}</h4>
+                        {% endfor %}</p>
+                </div>
+
+                <button type="button" class="collapsible">Other Alcoholic</button>
+                <div class="content">
+                    <p>{% for alc in alcs %}
+                        <h4><input type="checkbox" name ="ingredient" value="{{ alc }}" class="checkbox"> {{ alc }}</h4>
+                        {% endfor %}</p>
+                </div>
+
+                <button type="button" class="collapsible">Bitters</button>
+                <div class="content">
+                    <p>{% for bitter in bitters %}
+                        <h4><input type="checkbox" name ="ingredient" value="{{ bitter }}" class="checkbox"> {{ bitter }}</h4>
+                        {% endfor %}</p>
+                </div>
+
+                <button type="button" class="collapsible">Non-Alcoholic</button>
+                <div class="content">
+                    <p>{% for non_alc in non_alcs %}
+                        <h4><input type="checkbox" name ="ingredient" value="{{ non_alc }}" class="checkbox"> {{ non_alc }}</h4>
+                        {% endfor %}</p>
+                </div>
+
+                <button type="button" class="collapsible">Misc.</button>
+                <div class="content">
+                    <p>{% for misc in miscs %}
+                        <h4><input type="checkbox" name ="ingredient" value="{{ misc }}" class="checkbox"> {{ misc }}</h4>
+                        {% endfor %}</p>
+                </div>
+                <p></p>
+                <p>Don't see your ingredient? <a href="/add2">Add it here.</a></p>
+                </div>
+
+
+                <p></p>
+            <button type="submit" class="button">Save</button>
+        </form>
+
+    <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+        </script>
+    </body> <p>
+
+    </p>
+    <p>
+
+
+
+{% endblock %}

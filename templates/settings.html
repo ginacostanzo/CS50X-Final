@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+<header>
+    <div>
+        <h1>
+            Settings
+        </h1>
+    </div>
+</header>
+<body>
+    <form action="/settings" method="post">
+        {{ message }}
+        <div class="mb-3">
+            <div class="body">
+
+        {{ error }}
+
+            <div class="header">Change Username</div>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+            <p></p><button class="button" type="submit">Update</button>
+            <p></p>
+            <div class="header">Change Email Address</div>
+            <input class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email Address" type="email">
+            <p></p><button class="button" type="submit">Update</button>
+            <p></p>
+        <div class="header">Change Password</div>
+            Enter Current Password:<input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Current Password" type="password">
+            Enter New Password:<input class="form-control mx-auto w-auto" id="password" name="new_password" placeholder="New Password" type="password">
+            Re-enter New Password:<input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="New Password" type="password">
+            <p></p><button class="button" type="submit">Update</button>
+            <p></p>
+        </div>
+    </form>
+</div>
+{% endblock %}

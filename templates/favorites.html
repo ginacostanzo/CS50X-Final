@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Bar
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                Favorite Recipes
+            </h1>
+            <form action="/drinks" method="get">
+                <button type="submit" class="button"><a class="btn_link" href="/drinks">View More Recipes</a></button>
+            </form>
+        </div>
+    </header>
+
+    <body>
+        <h2></h2>
+        <p></p>
+
+        <div class="body">
+            <p>
+                <div class="header">My Favorite Recipes</div>
+                {% for favorite in favorites %}
+                <h4> {{ favorite["drink"] }}</h4>
+                {% endfor %}
+            </p>
+        </div>
+
+
+        <p></p>
+
+        </body> <p>
+
+    </p>
+    <p>
+
+
+
+{% endblock %}

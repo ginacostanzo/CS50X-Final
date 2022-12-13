@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Bar
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                {{ bar_name }}
+            </h1>
+            <form action="/update" method="get">
+                <button type="submit" class="button"><a class="btn_link" href="/update">Update Your Ingredients</a></button>
+            </form>
+        </div>
+    </header>
+
+    <body>
+        <h2></h2>
+        <p></p>
+
+        <div class="body">
+            <p>
+                <div class="header">My Ingredients</div>
+                {% for bar in bars %}
+                <h4> {{ bar["ingredients"] }}</h4>
+                {% endfor %}
+            </p>
+        </div>
+
+
+        <p></p>
+
+        </body> <p>
+
+    </p>
+    <p>
+
+
+
+{% endblock %}

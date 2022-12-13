@@ -1,0 +1,279 @@
+body {
+    background-color: #656565;
+}
+
+.link {
+    color: #192841;
+    font-weight: bold;
+    font-family: "Verdana";
+    background-color: #eee;
+    border: none;
+    text-decoration: none;
+}
+.link:hover {
+    color: #174563;
+    font-weight: bold;
+    font-family: "Verdana";
+    text-transform: uppercase;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 64px;
+}
+
+h2 {
+    color: #000000;
+    font-size: 30px;
+    font-family: "Verdana";
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h3 {
+    color: #000000;
+    font-size: 24px;
+    font-family: "Verdana";
+}
+
+h4 {
+    color: #000000;
+    font-size: 16px;
+    font-family: "Verdana";
+}
+
+h5 {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    font-family: "Verdana";
+}
+
+
+#navbar {
+    font-size: 18px;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    text-transform: uppercase;
+    font-family: "Verdana";
+}
+
+.nav-link:hover {
+    color: white;
+    text-transform: uppercase;
+    font-family: "Verdana";
+}
+
+.nav-button {
+    color: white;
+    background-color: #212529;
+    border: none;
+    margin-top: 5px;
+    font-family: "Verdana";
+}
+
+.nav-button:hover {
+    background-color: black;
+}
+
+.nav-button-right {
+    margin-left: auto;
+    color: white;
+    background-color: #212529;
+    border: none;
+    margin-top: 5px;
+    font-family: "Verdana";
+}
+
+.nav-button-right:hover {
+    background-color: black;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    border-bottom: 2px solid black;
+    outline: none;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: "Verdana";
+    text-align: center;
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #ccc;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    width: 50%;
+    margin: auto;
+  }
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+}
+
+.setup_btn {
+    color: white;
+    background-color: #212529;
+    border: none;
+    margin-top: 5px;
+    font-family: "Verdana";
+    font-size: 20px;
+    padding: 20px;
+    width: auto;
+}
+
+.setup_btn:hover {
+    background-color: black;
+}
+
+.button {
+    color: white;
+    background-color: #212529;
+    border: none;
+    margin-top: 5px;
+    font-family: "Verdana";
+    font-size: 20px;
+    padding: 20px;
+    width: auto;
+}
+
+.button:hover {
+    background-color: black;
+}
+
+.search_btn {
+    color: white;
+    background-color: #212529;
+    border: none;
+    margin-top: 5px;
+    font-family: "Verdana";
+    font-size: 20px;
+    padding: 20px;
+    width: auto;
+}
+
+.search_btn:hover {
+    background-color: black;
+}
+
+.search {
+    height: 50px;
+    width: 300px;
+}
+
+.btn_link {
+    color: white;
+    font-family: "Verdana";
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.btn_link:hover {
+    color: white;
+    font-family: "Verdana";
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.updatebtn {
+    color: #444;
+    background-color: #eee;
+    border: none;
+    margin-top: 5px;
+    font-family: "Verdana";
+    font-size: 20px;
+    padding: 20px;
+    width: 30%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.updatebtn:hover {
+    background-color: #ccc;
+}
+
+.update_a {
+    color: #444;
+}
+
+.update_a:hover {
+    color: #444;
+}
+
+.bar_name {
+    background-color: #eee;
+    color: #444;
+    padding: 18px;
+    width: 50%;
+    border: 2px solid black;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: "Verdana";
+    text-align: left;
+}
+
+.body {
+    background-color: #eee;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.header {
+    background-color: #ccc;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: "Verdana";
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.add_i {
+    width: 345px;
+}
+
+.add_q {
+    width: 70px;
+}
+
+.add {
+    width: 70%;
+    margin: auto;
+}
+
+.add_btn {
+    color: white;
+    background-color: #212529;
+    border: none;
+    margin-top: 5px;
+    font-family: "Verdana";
+    font-size: 16px;
+    padding: 10px;
+    width: auto;
+}
+
+.quantity {
+    width: 75px;
+}
+
+.instructions {
+    height: 66px;
+    width: 466px;
+}

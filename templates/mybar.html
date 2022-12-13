@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Bar
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                {{ bar_name }}
+            </h1>
+            <form action="/update" method="get">
+                <button type="submit" class="button"><a class="btn_link" href="/update">Update Your Bar</a></button>
+            </form>
+        </div>
+    </header>
+
+    <body>
+        <h2></h2>
+        <p></p>
+
+        <div class="body">
+            <p>
+                <div class="header">My Bar</div>
+                <p>
+                    <button class="link" type="button"><a class="link" href="/myingredients">View My Ingredients</a></button>
+                </p>
+                <p>
+                    <button class="link" type="button"><a class="link" href="/favorites">Favorite Recipes</a></button>
+                </p>
+                <p>
+                    <button class="link" type="button"><a class="link" href="/available">Recipes I Can Make</a></button>
+                </p>
+            </p>
+        </div>
+
+
+        <p></p>
+
+        </body> <p>
+
+    </p>
+    <p>
+
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Ingredients
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                New Ingredients!
+            </h1>
+        </div>
+    </header>
+
+    <body>
+        <p></p>
+        <div class="body">
+            <p id="error"></p>
+            <form action="/add2" method="post">
+                <div class="header">Add Ingredients</div>
+                    <h4>Missing an ingredient from our database? Select the type of each ingredient and save to add them.</h4>
+                <p></p>
+
+                <table class="add">
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input name="ingredient" type="text" class="add_i"></td>
+                            <td>
+                                <select name="type" id="type">
+                                    <option disabled selected>Select Type</option>
+                                {% for type in types %}
+                                    <option value="{{ type }}">{{ type }}</option>
+                                {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p></p><button type="submit" class="button" id="submit">Save</button>
+            </form>
+        </div>
+    </div>
+    </body>
+    <p></p>
+    <p></p>
+
+
+
+{% endblock %}

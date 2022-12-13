@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add A Recipe
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                Add A Recipe
+            </h1>
+        </div>
+    </header>
+
+    <body>
+        <p></p>
+        <div class="body">
+            {{ error }}
+            <form action="/add1" method="post">
+                <div class="header">Drink Name: <input name="drink" type="text" placeholder="Name of drink" autocomplete="off"></div>
+                <table class="add">
+                    <thead>
+                        <tr>
+                            <th class="quantity">
+                                Quantity
+                            </th>
+                            <th>
+                                Ingredient
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="quantity"><input name="quantity" type="text" class="add_q"></td>
+                            <td><input list="ingredient" name="ingredient" class="add_i">
+
+                                <datalist id="ingredient">
+                                    {% for ingredient in ingredients %}
+                                <option name="ingredient" value="{{ ingredient["ingredient"] }}">
+                                    {% endfor %}
+
+                                </datalist></td>
+                        </tr>
+                        <tr>
+                            <td class="quantity"><input name="quantity" type="text" class="add_q"></td>
+                            <td><input list="ingredient" name="ingredient" class="add_i">
+
+                                <datalist id="ingredient">
+                                    {% for ingredient in ingredients %}
+                                <option name="ingredient" value="{{ ingredient["ingredient"] }}">
+                                    {% endfor %}
+
+                                </datalist></td>
+                        </tr>
+                        <tr>
+                            <td class="quantity"><div id="new-input-container1"></div></td>
+                            <td><div id="new-input-container2"></div></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <p></p>
+                        <p>
+                            <button id="add_btn" class="add_btn" type="button"> + Add another ingredient</button>
+                        </p>
+                <input class="instructions" name="instructions", type="text", placeholder="Instructions", autocomplete="off">
+
+                <p></p><button type="submit" class="button">Save</button>
+            </form>
+
+            <form>
+
+
+            </form>
+        </div>
+
+        <script>
+            document.querySelector('.add_btn').addEventListener('click', createNewInputFields);
+
+    function createNewInputFields() {
+      const quantity = document.getElementById('new-input-container1');
+      const ingredient = document.getElementById('new-input-container2');
+      const inputHTML1 = "<input class='add_q' name='quantity' type='text'/>";
+      const inputHTML2 = "<input list='ingredient' class='add_i' name='ingredient' type='text'/>";
+      quantity.insertAdjacentHTML('beforeend', inputHTML1);
+      ingredient.insertAdjacentHTML('beforeend', inputHTML2);
+    }
+
+        </script>
+    </body>
+    <p></p>
+    <p></p>
+
+
+
+{% endblock %}

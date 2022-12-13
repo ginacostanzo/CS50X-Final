@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Available Drinks
+{% endblock %}
+
+{% block main %}
+
+    <header>
+        <div>
+            <h1>
+                {{ bar_name }}
+            </h1>
+        </div>
+    </header>
+
+    <body>
+        <p></p>
+            <form action="/recipe" method="post">
+                <button type="button" class="collapsible">You have ALL ingredients to make:</button>
+                <div class="content">
+                {% for available in availables %}
+                <p>
+                <h4><button class="link" type="submit" name="drink0" value="{{ available }}">{{ available }}</button></h4>
+                </p>
+            {% endfor %}
+            </div>
+            <button type="button" class="collapsible">You need 1 more ingredient to make:</button>
+            <div class="content">
+                        {% for miss1 in miss1s %}
+                        <p>
+                            <h4><button class="link" type="submit" name="drink0" value="{{ miss1 }}">{{ miss1 }}</button></h4>
+                        </p>
+                        {% endfor %}
+                </div>
+                <button type="button" class="collapsible">You need 2 more ingredients to make:</button>
+                <div class="content">
+                        {% for miss2 in miss2s %}
+                        <p>
+                            <h4><button class="link" type="submit" name="drink0" value="{{ miss2 }}">{{ miss2 }}</button></h4>
+                        </p>
+                        {% endfor %}
+                </div>
+
+                <button type="button" class="collapsible">You need 3 more ingredients to make:</button>
+                <div class="content">
+                        {% for miss3 in miss3s %}
+                        <p>
+                            <h4><button class="link" type="submit" name="drink0" value="{{ miss3 }}">{{ miss3 }}</button></h4>
+                        </p>
+                        {% endfor %}
+                </div>
+
+                <button type="button" class="collapsible">You need 4+ more ingredients to make:</button>
+                <div class="content">
+                        {% for missing in missings %}
+                        <p>
+                            <h4><button class="link" type="submit" name="drink0" value="{{ missing }}">{{ missing }}</button></h4>
+                        </p>
+                        {% endfor %}
+                </div>
+            </form>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+        </script>
+        </body>
+    <p></p>
+    <p></p>
+
+
+
+{% endblock %}
